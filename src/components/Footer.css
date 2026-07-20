@@ -1,0 +1,217 @@
+.site-footer {
+  background: var(--navy-900);
+  color: var(--slate-300);
+  padding: 5rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+}
+
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr 0.9fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.footer-logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--gold-400), var(--gold-600));
+  color: var(--navy-900);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo-text .brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.footer-logo-text .brand-sub {
+  font-size: 0.65rem;
+  color: var(--gold-400);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.footer-brand-desc {
+  color: var(--slate-400);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.footer-trust-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-col-title {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  height: 2px;
+  background: var(--gold-500);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-links button {
+  background: none;
+  border: none;
+  color: var(--slate-400);
+  font-size: 0.875rem;
+  text-align: left;
+  transition: color var(--transition-fast);
+}
+
+.footer-links button:hover {
+  color: var(--gold-400);
+  transform: translateX(3px);
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--slate-300);
+  font-size: 0.875rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-contact-item.whatsapp:hover {
+  color: var(--whatsapp-green);
+}
+
+.footer-contact-item:hover {
+  color: var(--gold-400);
+}
+
+.footer-contact-item.address {
+  align-items: flex-start;
+  color: var(--slate-400);
+  font-size: 0.825rem;
+}
+
+.footer-policy-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.825rem;
+}
+
+.policy-links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.policy-links a {
+  color: var(--slate-400);
+  transition: color var(--transition-fast);
+}
+
+.policy-links a:hover {
+  color: var(--gold-400);
+}
+
+.policy-links .dot {
+  color: var(--slate-600);
+}
+
+.scroll-top-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--slate-300);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.scroll-top-btn:hover {
+  background: var(--gold-500);
+  color: var(--navy-900);
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.775rem;
+  color: var(--slate-500);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.developer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-main-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-policy-row, .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+}

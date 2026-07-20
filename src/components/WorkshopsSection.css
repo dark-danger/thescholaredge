@@ -1,0 +1,196 @@
+.workshops-section {
+  padding: 6rem 0;
+  background: var(--slate-100);
+}
+
+.format-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.format-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FFFFFF;
+  border: 1px solid var(--slate-200);
+  color: var(--slate-700);
+  padding: 0.6rem 1.25rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all var(--transition-normal);
+}
+
+.format-btn:hover {
+  border-color: var(--blue-500);
+  color: var(--navy-800);
+}
+
+.format-btn.active {
+  background: var(--navy-800);
+  color: #FFFFFF;
+  border-color: var(--navy-800);
+}
+
+.workshops-grid {
+  margin-bottom: 4rem;
+}
+
+.workshop-card {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--slate-200);
+}
+
+.workshop-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.format-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--navy-700);
+  background: var(--slate-100);
+  padding: 0.25rem 0.65rem;
+  border-radius: 1rem;
+}
+
+.workshop-title {
+  font-size: 1.35rem;
+  color: var(--navy-800);
+  margin-bottom: 1rem;
+  line-height: 1.35;
+}
+
+.workshop-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--slate-50);
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--slate-600);
+  font-weight: 500;
+}
+
+.workshop-divider {
+  height: 1px;
+  background: var(--slate-200);
+  margin-bottom: 1.25rem;
+}
+
+.curriculum-heading {
+  font-size: 0.925rem;
+  color: var(--navy-800);
+  margin-bottom: 0.75rem;
+}
+
+.workshop-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.workshop-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.875rem;
+  color: var(--slate-700);
+}
+
+.feat-check {
+  color: var(--emerald-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.workshop-card-footer {
+  margin-top: auto;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Discord Community Banner */
+.discord-community-banner {
+  background: linear-gradient(135deg, var(--discord-blurple) 0%, #3C45A5 100%);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #FFFFFF;
+  box-shadow: 0 15px 30px rgba(88, 101, 242, 0.25);
+}
+
+.discord-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.discord-logo-box {
+  width: 65px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.discord-banner-content h3 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.discord-banner-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.975rem;
+  max-width: 650px;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .discord-community-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  .discord-banner-content {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,262 @@
+.contact-section {
+  padding: 6rem 0;
+  background: var(--navy-900);
+  color: #FFFFFF;
+  position: relative;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+.contact-heading {
+  font-size: 2.25rem;
+  color: #FFFFFF;
+  margin: 1rem 0 1rem;
+}
+
+.contact-sub {
+  color: var(--slate-300);
+  font-size: 1.05rem;
+  margin-bottom: 2.25rem;
+  line-height: 1.6;
+}
+
+.contact-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card {
+  background: rgba(15, 34, 61, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  transition: all var(--transition-normal);
+  color: #FFFFFF;
+}
+
+.contact-card:hover {
+  background: rgba(15, 34, 61, 0.95);
+  border-color: rgba(245, 158, 11, 0.3);
+  transform: translateX(4px);
+}
+
+.contact-card.whatsapp-highlight {
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  background: rgba(37, 211, 102, 0.08);
+}
+
+.contact-card.whatsapp-highlight:hover {
+  border-color: var(--whatsapp-green);
+  background: rgba(37, 211, 102, 0.15);
+}
+
+.contact-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon-box.green { background: rgba(37, 211, 102, 0.15); color: var(--whatsapp-green); }
+.contact-icon-box.blue { background: rgba(37, 99, 235, 0.15); color: var(--blue-500); }
+.contact-icon-box.gold { background: rgba(245, 158, 11, 0.15); color: var(--gold-400); }
+.contact-icon-box.slate { background: rgba(255, 255, 255, 0.1); color: var(--slate-300); }
+
+.contact-card-title {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--slate-300);
+}
+
+.contact-card-value {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.contact-card-note {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gold-400);
+}
+
+/* Discord card */
+.contact-discord-card {
+  background: rgba(88, 101, 242, 0.12);
+  border: 1px solid rgba(88, 101, 242, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.discord-card-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.discord-icon {
+  color: var(--discord-blurple);
+}
+
+.discord-card-left strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.discord-card-left span {
+  font-size: 0.775rem;
+  color: var(--slate-300);
+}
+
+/* Form Side */
+.form-glass-card {
+  background: rgba(15, 34, 61, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.form-header {
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+}
+
+.form-header h3 {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+}
+
+.form-header p {
+  color: var(--slate-300);
+  font-size: 0.9rem;
+}
+
+.actual-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.form-group label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--slate-200);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(6, 17, 33, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  color: #FFFFFF;
+  font-size: 0.925rem;
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold-400);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.submit-btn {
+  padding: 1rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.form-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.775rem;
+  color: var(--slate-400);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Success State */
+.form-success-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.success-icon-box {
+  width: 72px;
+  height: 72px;
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.form-success-state h3 {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.form-success-state p {
+  color: var(--slate-300);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}

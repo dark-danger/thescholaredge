@@ -1,0 +1,109 @@
+.whatsapp-widget-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.whatsapp-float-btn {
+  width: 60px;
+  height: 60px;
+  background: var(--whatsapp-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--whatsapp-green);
+  opacity: 0.75;
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.75; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.whatsapp-tooltip-card {
+  background: #FFFFFF;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem;
+  width: 280px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+}
+
+.tooltip-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--slate-400);
+  cursor: pointer;
+}
+
+.tooltip-close-btn:hover {
+  color: var(--slate-700);
+}
+
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--navy-800);
+}
+
+.online-indicator {
+  width: 8px;
+  height: 8px;
+  background: var(--whatsapp-green);
+  border-radius: 50%;
+}
+
+.tooltip-text {
+  font-size: 0.825rem;
+  color: var(--slate-600);
+  margin-bottom: 0.85rem;
+  line-height: 1.45;
+}
+
+.tooltip-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: var(--whatsapp-green);
+  color: #FFFFFF;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.825rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.tooltip-whatsapp-btn:hover {
+  background: #20bd5a;
+}
