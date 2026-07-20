@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Phone, Mail, MapPin, MessageCircle, CheckCircle2, ShieldCheck, MessageSquare, FileSpreadsheet } from 'lucide-react';
 import './ContactSection.css';
 
-const GOOGLE_SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL || 'https://script.google.com/macros/s/AKfycby_saO5S-y-6wLOeTwM6MfHnA9VLLzvj-dNBMkZ1_nWvByXuTP_dh7FzxZvmWgmcuj0/exec';
+const GOOGLE_SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL || 'https://script.google.com/macros/s/AKfycbw-bCxMAs1xfiQ9CF4viDcAwQROo22kTO-pLDrFoB0peDxg-aFtVFBnL2VDOiz7i-ip/exec';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
