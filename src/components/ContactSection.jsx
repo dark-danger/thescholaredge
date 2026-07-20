@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2, ShieldCheck, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2, ShieldCheck, MessageSquare, FileSpreadsheet } from 'lucide-react';
 import './ContactSection.css';
+
+// You can set your Google Apps Script Web App URL here or via environment variable VITE_GOOGLE_SHEET_URL
+const GOOGLE_SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL || '';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,12 +16,37 @@ export default function ContactSection() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
 
-    // Auto-construct WhatsApp message URL so inquiry arrives directly on WhatsApp
+    // 1. Post to Google Sheet if GOOGLE_SHEET_URL is configured
+    if (GOOGLE_SHEET_URL) {
+      try {
+        await fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            degree: formData.degree,
+            toolInterest: formData.toolInterest,
+            message: formData.message
+          }),
+        });
+      } catch (error) {
+        console.error('Google Sheet submission log:', error);
+      }
+    }
+
+    // 2. Format WhatsApp text & auto-open chat
     const waText = `Hi, I submitted an inquiry on The Scholar Edge:
 • Name: ${formData.name}
 • Email: ${formData.email}
@@ -29,6 +57,9 @@ export default function ContactSection() {
 
     const waUrl = `https://wa.me/918685099555?text=${encodeURIComponent(waText)}`;
     window.open(waUrl, '_blank');
+
+    setIsSubmitting(false);
+    setSubmitted(true);
   };
 
   return (
@@ -129,9 +160,9 @@ export default function ContactSection() {
                   <div className="success-icon-box">
                     <CheckCircle2 size={48} color="#10B981" />
                   </div>
-                  <h3>Consultation Request Submitted!</h3>
+                  <h3>Consultation Request Received!</h3>
                   <p>
-                    Thank you, <strong>{formData.name}</strong>. Your inquiry has been generated and sent to our WhatsApp desk (<strong>+91-86850 99555</strong>).
+                    Thank you, <strong>{formData.name}</strong>. Your details have been logged to our Google Sheet database and sent to our WhatsApp desk (<strong>+91-86850 99555</strong>).
                   </p>
                   <div className="success-actions">
                     <a 
@@ -232,9 +263,13 @@ export default function ContactSection() {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-whatsapp full-width submit-btn">
-                    <MessageCircle size={18} />
-                    <span>Submit & Connect on WhatsApp (+91-86850 99555)</span>
+                  <button 
+                    type="submit" 
+                    className="btn btn-whatsapp full-width submit-btn"
+                    disabled={isSubmitting}
+                  >
+                    <FileSpreadsheet size={18} />
+                    <span>{isSubmitting ? 'Saving to Google Sheet...' : 'Submit & Connect on WhatsApp (+91-86850 99555)'}</span>
                   </button>
 
                   <div className="form-footer-note">
