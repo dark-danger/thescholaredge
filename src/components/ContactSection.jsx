@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2, Clock, ShieldCheck, Sparkles, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2, ShieldCheck, MessageSquare } from 'lucide-react';
 import './ContactSection.css';
 
 export default function ContactSection() {
@@ -17,6 +17,18 @@ export default function ContactSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+
+    // Auto-construct WhatsApp message URL so inquiry arrives directly on WhatsApp
+    const waText = `Hi, I submitted an inquiry on The Scholar Edge:
+• Name: ${formData.name}
+• Email: ${formData.email}
+• Phone: ${formData.phone}
+• Academic Level: ${formData.degree}
+• Tool/Topic: ${formData.toolInterest}
+• Research Needs: ${formData.message || 'N/A'}`;
+
+    const waUrl = `https://wa.me/918685099555?text=${encodeURIComponent(waText)}`;
+    window.open(waUrl, '_blank');
   };
 
   return (
@@ -119,16 +131,16 @@ export default function ContactSection() {
                   </div>
                   <h3>Consultation Request Submitted!</h3>
                   <p>
-                    Thank you, <strong>{formData.name}</strong>. Our senior research statistician has received your request regarding <strong>{formData.degree} ({formData.toolInterest})</strong> and will call/WhatsApp you within 2 hours at <strong>{formData.phone || formData.email}</strong>.
+                    Thank you, <strong>{formData.name}</strong>. Your inquiry has been generated and sent to our WhatsApp desk (<strong>+91-86850 99555</strong>).
                   </p>
                   <div className="success-actions">
                     <a 
-                      href={`https://wa.me/918685099555?text=Hi%2C%20I%20just%20submitted%20a%20consultation%20request%20for%20${encodeURIComponent(formData.degree)}`} 
+                      href={`https://wa.me/918685099555?text=${encodeURIComponent(`Hi, I submitted an inquiry:\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Goal: ${formData.degree}`)}`} 
                       target="_blank" 
                       rel="noreferrer"
                       className="btn btn-whatsapp full-width"
                     >
-                      <MessageCircle size={18} /> Connect Now on WhatsApp
+                      <MessageCircle size={18} /> Open WhatsApp Chat Again
                     </a>
                     <button 
                       onClick={() => setSubmitted(false)}
@@ -220,9 +232,9 @@ export default function ContactSection() {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-gold full-width submit-btn">
-                    <span>Submit & Request Free Audit</span>
-                    <Send size={16} />
+                  <button type="submit" className="btn btn-whatsapp full-width submit-btn">
+                    <MessageCircle size={18} />
+                    <span>Submit & Connect on WhatsApp (+91-86850 99555)</span>
                   </button>
 
                   <div className="form-footer-note">
