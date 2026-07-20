@@ -209,6 +209,25 @@
 }
 
 @media (max-width: 640px) {
+  .about-section {
+    padding: 3.5rem 0;
+  }
+  .about-title {
+    font-size: 1.65rem;
+  }
+  .about-actions {
+    flex-direction: column;
+  }
+  .about-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .milestones-card {
+    padding: 1.5rem;
+  }
+  .milestone-num {
+    font-size: 1.85rem;
+  }
   .pillars-grid {
     grid-template-columns: 1fr;
   }

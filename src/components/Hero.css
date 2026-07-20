@@ -292,13 +292,33 @@
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 3rem 0 4rem;
+    padding: 2.5rem 0 3.5rem;
   }
   .hero-title {
-    font-size: 1.85rem;
+    font-size: 1.75rem;
   }
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-glass-card {
+    padding: 1.25rem;
+  }
+  .card-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .card-footer .btn {
+    width: 100%;
   }
   .hero-trust-grid {
     grid-template-columns: 1fr;
