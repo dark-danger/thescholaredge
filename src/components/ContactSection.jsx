@@ -21,24 +21,26 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // 1. Post data to Google Sheet
+    // 1. Post data to Google Sheet Web App
     if (GOOGLE_SHEET_URL) {
       try {
+        const payload = JSON.stringify({
+          timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          degree: formData.degree,
+          toolInterest: formData.toolInterest,
+          message: formData.message
+        });
+
         await fetch(GOOGLE_SHEET_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'text/plain;charset=utf-8',
           },
-          body: JSON.stringify({
-            timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            degree: formData.degree,
-            toolInterest: formData.toolInterest,
-            message: formData.message
-          }),
+          body: payload,
         });
       } catch (error) {
         console.error('Google Sheet submission log:', error);
