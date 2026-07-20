@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2, ShieldCheck, MessageSquare, FileSpreadsheet } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, CheckCircle2, ShieldCheck, MessageSquare, FileSpreadsheet } from 'lucide-react';
 import './ContactSection.css';
 
-// You can set your Google Apps Script Web App URL here or via environment variable VITE_GOOGLE_SHEET_URL
-const GOOGLE_SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL || '';
+const GOOGLE_SHEET_URL = import.meta.env.VITE_GOOGLE_SHEET_URL || 'https://script.google.com/macros/s/AKfycby_saO5S-y-6wLOeTwM6MfHnA9VLLzvj-dNBMkZ1_nWvByXuTP_dh7FzxZvmWgmcuj0/exec';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -22,7 +21,7 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // 1. Post to Google Sheet if GOOGLE_SHEET_URL is configured
+    // 1. Post data to Google Sheet
     if (GOOGLE_SHEET_URL) {
       try {
         await fetch(GOOGLE_SHEET_URL, {
