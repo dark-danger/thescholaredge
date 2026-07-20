@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageCircle, Menu, X, BookOpen, ShieldCheck } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, BookOpen, ShieldCheck, ChevronRight } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar({ activeTab, setActiveTab }) {
@@ -120,47 +120,67 @@ export default function Navbar({ activeTab, setActiveTab }) {
             </a>
             <button
               className="mobile-toggle"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle Navigation Menu"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open Navigation Menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              <Menu size={24} />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Drawer Menu */}
+      {/* Fullscreen / Slide-Over Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="mobile-menu-drawer">
-          <ul className="mobile-nav-links">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <button
-                  className={`mobile-nav-link ${activeTab === item.id ? 'active' : ''}`}
-                  onClick={() => handleNavClick(item.id)}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-          <div className="mobile-actions">
-            <a
-              href="https://wa.me/918685099555"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-whatsapp full-width"
-            >
-              <MessageCircle size={18} /> Chat on WhatsApp (+91-86850 99555)
-            </a>
-            <a
-              href="https://discord.gg"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-discord full-width"
-            >
-              Join Our Discord Server
-            </a>
+        <div className="mobile-drawer-overlay" onClick={() => setMobileMenuOpen(false)}>
+          <div className="mobile-drawer-content" onClick={(e) => e.stopPropagation()}>
+            <div className="drawer-header">
+              <div className="logo" onClick={() => handleNavClick('home')}>
+                <div className="logo-icon" style={{ width: '36px', height: '36px' }}>
+                  <BookOpen size={20} />
+                </div>
+                <span className="brand-name" style={{ fontSize: '1.1rem' }}>THE SCHOLAR EDGE</span>
+              </div>
+              <button 
+                className="drawer-close-btn" 
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close Menu Drawer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <ul className="mobile-nav-list">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    className={`mobile-nav-item-btn ${activeTab === item.id ? 'active' : ''}`}
+                    onClick={() => handleNavClick(item.id)}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronRight size={18} opacity={0.6} />
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mobile-drawer-actions">
+              <a
+                href="https://wa.me/918685099555"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-whatsapp full-width"
+              >
+                <MessageCircle size={18} /> Chat on WhatsApp (+91-86850 99555)
+              </a>
+              <a
+                href="https://discord.gg"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-discord full-width"
+              >
+                Join Discord Server
+              </a>
+            </div>
           </div>
         </div>
       )}
