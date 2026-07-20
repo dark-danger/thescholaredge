@@ -18,17 +18,17 @@ export default function AboutSection() {
     },
     {
       icon: <Clock size={24} />,
-      title: '24/7 Round-the-Clock Mentorship',
-      desc: 'We understand research stress and tight university submission deadlines. Get prompt answers to your urgent statistical and chapter queries.'
+      title: '24/7 Mentorship',
+      desc: 'We understand research stress and tight university submission deadlines. Get prompt answers to your urgent statistical queries.'
     },
     {
       icon: <ShieldCheck size={24} />,
-      title: 'Academic Rigor & Data Integrity',
+      title: 'Academic Rigor',
       desc: 'No shortcut AI text generator. We deliver authentic, empirical statistical analysis tailored specifically to your thesis data.'
     },
     {
       icon: <HeartHandshake size={24} />,
-      title: 'Personalized 1-on-1 Support',
+      title: 'Personalized Support',
       desc: 'Every scholar is paired with a domain expert who guides you through supervisor feedback, viva defense, and reviewer comments.'
     }
   ];
@@ -68,7 +68,7 @@ export default function AboutSection() {
                 rel="noreferrer" 
                 className="btn btn-whatsapp"
               >
-                <MessageCircle size={18} /> Chat directly on WhatsApp (+91-86850 99555)
+                <MessageCircle size={18} /> Chat on WhatsApp (+91-86850 99555)
               </a>
               <a 
                 href="https://discord.gg" 
@@ -76,7 +76,7 @@ export default function AboutSection() {
                 rel="noreferrer" 
                 className="btn btn-discord"
               >
-                Join Discord Server
+                Join Discord
               </a>
             </div>
           </div>

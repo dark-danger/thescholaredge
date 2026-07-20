@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, BookOpen, CheckCircle2, ShieldCheck, Star, Users, ArrowRight, MessageCircle, Clock, Sparkles } from 'lucide-react';
+import { Award, CheckCircle2, Star, ArrowRight, MessageCircle, Clock, Sparkles } from 'lucide-react';
 import './Hero.css';
 
 export default function Hero() {
@@ -39,7 +39,7 @@ export default function Hero() {
               className="btn btn-whatsapp hero-btn"
             >
               <MessageCircle size={18} />
-              <span>WhatsApp Chat (+91-86850 99555)</span>
+              <span>WhatsApp: +91-86850 99555</span>
             </a>
 
             <a 
@@ -48,7 +48,7 @@ export default function Hero() {
               rel="noreferrer" 
               className="btn btn-discord hero-btn"
             >
-              <span>Join Our Discord</span>
+              <span>Join Discord</span>
             </a>
 
             <button

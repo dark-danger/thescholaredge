@@ -181,7 +181,7 @@ export default function ToolsSection() {
                 rel="noreferrer"
                 className="btn btn-whatsapp full-width"
               >
-                <MessageCircle size={18} /> Enroll / Inquire via WhatsApp (+91-86850 99555)
+                <MessageCircle size={18} /> Inquire via WhatsApp (+91-86850 99555)
               </a>
             </div>
           </div>
