@@ -20,11 +20,12 @@ export default function Navbar({ activeTab, setActiveTab }) {
 
   const navItems = [
     { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
     { id: 'services', label: 'Services' },
-    { id: 'tools', label: 'Tools We Teach' },
+    { id: 'courses', label: 'Courses' },
     { id: 'workshops', label: 'Workshops' },
     { id: 'portfolio', label: 'Portfolio' },
-    { id: 'about', label: 'About Us' },
+    { id: 'resources', label: 'Resources' },
     { id: 'testimonials', label: 'Testimonials' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -32,10 +33,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
   const handleNavClick = (id) => {
     setActiveTab(id);
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -45,7 +43,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
         <div className="container top-bar-content">
           <div className="top-bar-left">
             <span className="top-pill">
-              <ShieldCheck className="w-3.5 h-3.5" size={14} /> 24/7 Academic Support
+              <ShieldCheck size={14} /> 24/7 Academic Support
             </span>
             <span className="top-text">Empowering PhD & Postgrad Scholars for 25+ Years</span>
           </div>
